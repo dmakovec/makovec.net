@@ -1,13 +1,11 @@
 {
-  "name": "Contentful Gatsby Starter",
+  "name": "Dan Makovec",
   "description": "Gatsby starter for a Contentful project.",
   "keywords": [
-    "contentful",
-    "gatsby",
-    "static",
-    "ssg"
+    "dan",
+    "makovec",
   ],
-  "repository": "https://github.com/contentful-userland/gatsby-contentful-starter",
+  "repository": "https://github.com/dmakovec/makovec.net",
   "success_url": "/",
   "buildpacks": [
     {

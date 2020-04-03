@@ -1,15 +1,16 @@
 {
-  "name": "gatsby-contentful-starter",
-  "description": "Starter Contentful Gatsby Blog",
+  "name": "makovec.net",
+  "description": "Source for www.makovec.net",
   "version": "1.0.0",
-  "author": "Stefan Judis <stefanjudis@gmail.com>",
+  "author": "Dan Makovec <dan@makovec.net>",
   "bugs": {
-    "url": "https://github.com/contentful-userland/gatsby-contentful-starter/issues"
+    "url": "https://github.com/dmakovec/makovec.net/issues"
   },
   "dependencies": {
     "gatsby-image": "^2.2.43",
     "gatsby-plugin-react-helmet": "^3.1.23",
     "gatsby-plugin-sharp": "^2.4.10",
+    "gatsby-plugin-typescript": "^2.3.1",
     "gatsby-source-contentful": "^2.1.94",
     "gatsby-transformer-remark": "^2.6.57",
     "gatsby-transformer-sharp": "^2.3.18",
@@ -20,6 +21,9 @@
     "sharp": "^0.25.1"
   },
   "devDependencies": {
+    "@types/react-helmet": "^5.0.15",
+    "@typescript-eslint/eslint-plugin": "^2.26.0",
+    "@typescript-eslint/parser": "^2.26.0",
     "babel-eslint": "^10.1.0",
     "chalk": "^3.0.0",
     "contentful-import": "^7.7.0",
@@ -31,6 +35,7 @@
     "inquirer": "^7.1.0",
     "prettier": "^1.19.1",
     "rimraf": "^3.0.2",
+    "typescript": "^3.8.3",
     "yargs-parser": "^18.1.0"
   },
   "homepage": "https://github.com/contentful-userland/gatsby-contentful-starter#readme",
