@@ -5,18 +5,22 @@
 .nav-button {
   z-index: 99999;
   right: 0;
-  position: absolute;
+  position: fixed;
   font-size: 30px;
-  margin-top: 10px;
+  margin-top: 20px;
   margin-right: 10px;
   color: #373f49;
-  background: transparent;
+  padding: 5px;
+  background-color:rgba(167, 167, 167, 0.801);
   border: none;
   cursor: pointer;
   outline: none;
   float: right;
 }
 
+.home-nav-button {
+  margin-right: 25px
+}
 nav[role="navigation"] {
   width: 100%;
   padding: 10px;

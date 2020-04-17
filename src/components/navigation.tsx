@@ -38,6 +38,10 @@ export default class Navigation extends React.Component<PageProps> {
   render() {
     const { location } = this.props;
     const links: object[] = [];
+    let navButtonStyle = styles.navButton;
+    if (location.pathname === '/') {
+      navButtonStyle += ` ${styles.homeNavButton}`
+    }
 
     items.forEach((item, index) => {
       let className = styles.navigationItem;
@@ -61,9 +65,10 @@ export default class Navigation extends React.Component<PageProps> {
       }
 
     });
+
     return (
       <nav role="navigation" className={this.state.toggle ? styles.activeNav : ""}>
-        <button className={styles.navButton} onClick={this.Toggle}>
+        <button className={navButtonStyle} onClick={this.Toggle}>
           <FaAlignRight />
         </button>
         <ul className={this.state.toggle ? `${styles.navLinks} ${styles.showNav}` : styles.navLinks}>
