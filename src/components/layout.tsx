@@ -1,13 +1,19 @@
 import React from 'react'
 import { Link } from 'gatsby'
-import base from './base.css'
+import base from './base.scss'
 import Container from './container'
 import Navigation from './navigation'
+import Footer from './footer'
+import './base.scss'
 
-class Template extends React.Component {
+interface Props {
+  location: object,
+  children: any
+}
+
+class Layout extends React.Component<Props> {
   render() {
     const { location, children } = this.props
-    let header
 
     let rootPath = `/`
     if (typeof __PREFIX_PATHS__ !== `undefined` && __PREFIX_PATHS__) {
@@ -16,11 +22,13 @@ class Template extends React.Component {
 
     return (
       <Container>
-        <Navigation />
+        <Navigation location={location} />
         {children}
+        <Footer />
       </Container>
     )
   }
 }
 
-export default Template
+export default Layout
+

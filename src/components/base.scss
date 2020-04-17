@@ -15,9 +15,17 @@ body {
   margin: 0;
 }
 
+.content {
+  background-color: #fff;
+}
+pre {
+  background-color: lightgrey;
+  overflow-x: auto;
+}
+
 img {
   display: block;
-  width: 100%;
+  // width: 100%;
 }
 
 h1,

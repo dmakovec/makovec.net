@@ -1,0 +1,76 @@
+.content {
+  .af-form {
+    margin: 0 auto;
+
+    .af-step {
+      .af-button {
+        margin: 0 auto;
+        width: 300px;
+      }
+      .af-field {
+        .af-field-label,
+        .af-field-input {
+          width: 300px;
+          margin: 0 auto;
+        }
+
+        .af-field-label {
+          label {
+            font-family: "Avenir", Tahoma, Arial, Helvetica, sans-serif;
+            font-weight: bolder;
+            width: 300px;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (min-width: 600px) {
+  .content {
+    .af-form {
+      .af-step {
+        .af-button {
+          width: 400px;
+        }
+
+        .af-field {
+          .af-field-label,
+          .af-field-input {
+            width: 400px;
+          }
+
+          .af-field-label {
+            label {
+              width: 400px;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (min-width: 1000px) {
+  .content {
+    .af-form {
+      .af-step {
+        .af-field-wrapper,
+        .af-field,
+        .af-field-input {
+          width: 500px;
+        }
+        .af-field {
+          width: 500px;
+          .af-field-label,
+          .af-field-input {
+            width: 500px;
+          }
+        }
+        .af-button {
+          width: 500px;
+        }
+      }
+    }
+  }
+}

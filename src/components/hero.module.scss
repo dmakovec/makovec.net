@@ -1,6 +1,6 @@
 .hero {
   position: relative;
-  background: #000;
+  background: #fff;
   color: #fff;
   text-align: center;
 }
@@ -12,6 +12,7 @@
   */
   height: 61.8vh;
   max-height: 400px;
+  width: auto;
 }
 
 .heroDetails {

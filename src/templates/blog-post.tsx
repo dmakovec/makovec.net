@@ -5,20 +5,19 @@ import get from 'lodash/get'
 import Img from 'gatsby-image'
 import Layout from '../components/layout'
 
-import heroStyles from '../components/hero.module.css'
+import heroStyles from '../components/hero.module.scss'
 
 class BlogPostTemplate extends React.Component {
   render() {
     const post = get(this.props, 'data.contentfulBlogPost')
-    const siteTitle = get(this.props, 'data.site.siteMetadata.title')
 
+    console.log("fluid", post.heroImage.fluid)
     return (
       <Layout location={this.props.location}>
-        <div style={{ background: '#fff' }}>
-          <Helmet title={`${post.title} | ${siteTitle}`} />
-          <div className={heroStyles.hero}>
+          <Helmet title={`${post.title}`} />
+        <div style={{ backgroundColor: '#fff' }}>
+          <div style={{height: "200px", margin: "0 auto", overflow: "hidden", width: "200px"}} className={heroStyles.hero}>
             <Img
-              className={heroStyles.heroImage}
               alt={post.title}
               fluid={post.heroImage.fluid}
             />
@@ -57,8 +56,8 @@ export const pageQuery = graphql`
       title
       publishDate(formatString: "MMMM Do, YYYY")
       heroImage {
-        fluid(maxWidth: 1180, background: "rgb:000000") {
-          ...GatsbyContentfulFluid_tracedSVG
+        fluid(maxHeight: 200, background: "rgb:ffffff") {
+          ...GatsbyContentfulFluid
         }
       }
       body {
