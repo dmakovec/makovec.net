@@ -5,14 +5,17 @@ import Helmet from 'react-helmet'
 import Hero from '../components/hero'
 import Layout from '../components/layout'
 
-class RootIndex extends React.Component {
+class RootIndex extends React.Component<PageProps> {
   render() {
     const siteTitle = get(this, 'props.data.site.siteMetadata.title')
     const [author] = get(this, 'props.data.allContentfulPerson.edges')
     const blurb = get(this, 'props.data.contentfulText.content.childMarkdownRemark.html')
     return (
       <Layout location={this.props.location}>
-        <div style={{ background: '#fff' }}>
+        <div className="content">
+          <Helmet>
+            <title>Home</title>
+          </Helmet>
           <Hero data={author.node} />
           <div className="wrapper">
             <div

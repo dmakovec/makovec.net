@@ -11,3 +11,6 @@ declare module 'gatsby-plugin-arengu-forms';
 interface PageProps {
   location: Location
 }
+
+declare var __PREFIX_PATHS__: any
+declare var __PATH_PREFIX__: any

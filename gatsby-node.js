@@ -1,42 +1,59 @@
 const Promise = require('bluebird')
 const path = require('path')
+const _ = require("lodash")
 
-exports.createPages = ({ graphql, actions }) => {
+exports.createPages = async ({ graphql, actions, reporter }) => {
   const { createPage } = actions
 
-  return new Promise((resolve, reject) => {
-    const blogPost = path.resolve('./src/templates/blog-post.tsx')
-    resolve(
-      graphql(
-        `
-          {
-            allContentfulBlogPost {
-              edges {
-                node {
-                  title
-                  slug
-                }
+  const blogPostTemplate = path.resolve('./src/templates/blog-post.tsx')
+  const tagTemplate = path.resolve('./src/templates/tag.tsx')
+
+  const result = await graphql(`
+        {
+          posts: allContentfulBlogPost {
+            edges {
+              node {
+                title
+                slug
               }
             }
           }
-          `
-      ).then(result => {
-        if (result.errors) {
-          console.log(result.errors)
-          reject(result.errors)
+          tags: allContentfulBlogPost(sort: {fields: tags, order: ASC}) {
+            group(field: tags) {
+              fieldValue
+            }
+          }
         }
+        `)
 
-        const posts = result.data.allContentfulBlogPost.edges
-        posts.forEach((post, index) => {
-          createPage({
-            path: `/useful-stuff/${post.node.slug}/`,
-            component: blogPost,
-            context: {
-              slug: post.node.slug
-            },
-          })
-        })
-      })
-    )
+  if (result.errors) {
+    reporter.panicOnBuild(`Error while running GraphQL query.`)
+    console.error(result.errors)
+    return
+  }
+
+  // Individual posts page
+  const posts = result.data.posts.edges
+  posts.forEach((post) => {
+    createPage({
+      path: `/useful-stuff/${post.node.slug}`,
+      component: blogPostTemplate,
+      context: {
+        slug: post.node.slug
+      },
+    })
   })
+
+  // Tags
+  const tags = result.data.tags.group
+  tags.forEach((tag) => {
+    createPage({
+      path: `/useful-stuff/tag/${_.kebabCase(tag.fieldValue)}/`,
+      component: tagTemplate,
+      context: {
+        tag: tag.fieldValue
+      },
+    })
+  })
+
 }

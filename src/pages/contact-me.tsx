@@ -6,7 +6,6 @@ import './contact-me.scss'
 
 class ContactMe extends React.Component<PageProps> {
   render() {
-    console.log(this.props)
     return (
       <Layout location={this.props.location}>
         <Helmet title="Contact Me!" />

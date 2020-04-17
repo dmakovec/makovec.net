@@ -1,17 +1,13 @@
 import React from 'react'
-import { Link } from 'gatsby'
+import Helmet from 'react-helmet'
 import base from './base.scss'
 import Container from './container'
 import Navigation from './navigation'
 import Footer from './footer'
 import './base.scss'
 
-interface Props {
-  location: object,
-  children: any
-}
 
-class Layout extends React.Component<Props> {
+class Layout extends React.Component<PageProps> {
   render() {
     const { location, children } = this.props
 
@@ -22,6 +18,9 @@ class Layout extends React.Component<Props> {
 
     return (
       <Container>
+        <Helmet titleTemplate="%s | Dan Makovec">
+          <meta name="author" content="Dan Makovec" />
+        </Helmet>
         <Navigation location={location} />
         {children}
         <Footer />

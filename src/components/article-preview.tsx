@@ -1,10 +1,11 @@
 import React from 'react'
 import { Link } from 'gatsby'
 import Img from 'gatsby-image'
+const _ = require("lodash")
 
 import styles from './article-preview.module.scss'
 
-export default function ({ article }) {
+export default function ({ article }: {article: any}) {
   return (
     <div className={styles.preview}>
       <Link to={`/useful-stuff/${article.slug}`}>
@@ -22,7 +23,7 @@ export default function ({ article }) {
       {article.tags &&
         article.tags.map((tag: string) => (
           <p className={styles.tag} key={tag}>
-            {tag}
+            <Link to={`/useful-stuff/tag/${_.kebabCase(tag)}`}>{tag}</Link>
           </p>
         ))}
     </div>

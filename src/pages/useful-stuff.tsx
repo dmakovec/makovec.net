@@ -5,14 +5,14 @@ import Helmet from 'react-helmet'
 import styles from './blog.module.scss'
 import Layout from '../components/layout'
 import ArticlePreview from '../components/article-preview'
-console.log("blog styles")
-console.log(styles)
 
 interface Post {
   node: {
     slug: string
   }
 }
+
+const TITLE = "Useful Stuff";
 
 class BlogIndex extends React.Component<PageProps> {
   render() {
@@ -21,10 +21,13 @@ class BlogIndex extends React.Component<PageProps> {
 
     return (
       <Layout location={this.props.location}>
-        <div style={{ background: '#fff' }}>
-          <Helmet title="Blog" />
+        <div className="content">
+          <Helmet title={TITLE}>
+            <meta name="description" content="Tidbits of info on various tech things" />
+
+          </Helmet>
           <div className="wrapper">
-            <h2 className="section-headline">Useful Stuff</h2>
+            <h1 className="section-headline">{TITLE}</h1>
             <ul className="article-list">
               {posts.map(({ node }) => {
                 return (

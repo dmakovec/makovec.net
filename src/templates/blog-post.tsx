@@ -7,16 +7,20 @@ import Layout from '../components/layout'
 
 import heroStyles from '../components/hero.module.scss'
 
-class BlogPostTemplate extends React.Component {
+class BlogPostTemplate extends React.Component<PageProps> {
   render() {
     const post = get(this.props, 'data.contentfulBlogPost')
 
-    console.log("fluid", post.heroImage.fluid)
     return (
       <Layout location={this.props.location}>
-          <Helmet title={`${post.title}`} />
-        <div style={{ backgroundColor: '#fff' }}>
-          <div style={{height: "200px", margin: "0 auto", overflow: "hidden", width: "200px"}} className={heroStyles.hero}>
+        <Helmet>
+          <title>{post.title}</title>
+          <meta name="description" content={post.description.childMarkdownRemark.excerpt} />
+          <meta name="keywords" content={post.tags.join()} />
+
+        </Helmet>
+        <div className="content">
+          <div style={{ height: "200px", margin: "0 auto", overflow: "hidden", width: "200px" }} className={heroStyles.hero}>
             <Img
               alt={post.title}
               fluid={post.heroImage.fluid}
@@ -31,6 +35,11 @@ class BlogPostTemplate extends React.Component {
             >
               {post.publishDate}
             </p>
+            <div style={{fontStyle: "italic"}}
+              dangerouslySetInnerHTML={{
+                __html: post.description.childMarkdownRemark.html,
+              }}
+            />
             <div
               dangerouslySetInnerHTML={{
                 __html: post.body.childMarkdownRemark.html,
@@ -54,6 +63,13 @@ export const pageQuery = graphql`
     }
     contentfulBlogPost(slug: { eq: $slug }) {
       title
+      description {
+        childMarkdownRemark {
+          html
+          excerpt(format: PLAIN)
+        }
+      }
+      tags
       publishDate(formatString: "MMMM Do, YYYY")
       heroImage {
         fluid(maxHeight: 200, background: "rgb:ffffff") {

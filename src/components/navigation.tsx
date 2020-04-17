@@ -36,7 +36,7 @@ export default class Navigation extends React.Component<PageProps> {
   }
 
   render() {
-    const {location} = this.props;
+    const { location } = this.props;
     const links: object[] = [];
 
     items.forEach((item, index) => {
@@ -44,11 +44,21 @@ export default class Navigation extends React.Component<PageProps> {
       if (item.url === location.pathname || (item.url.length > 1 && location.pathname.substring(0, item.url.length) === item.url)) {
         className += ` ${styles.active}`
       }
-      links.push(
-        (<li className={className} key={index}>
-          <Link to={item.url}>{item.title}</Link>
-        </li>)
-      )
+      if (item.url.substring(0, 4) === 'http') {
+        links.push(
+          (<li className={className} key={index}>
+            <a href={item.url}>{item.title}</a>
+          </li>)
+        )
+
+      } else {
+        links.push(
+          (<li className={className} key={index}>
+            <Link to={item.url}>{item.title}</Link>
+          </li>)
+        )
+
+      }
 
     });
     return (
