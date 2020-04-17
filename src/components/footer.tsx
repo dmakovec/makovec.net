@@ -8,6 +8,6 @@ const year = (new Date()).getFullYear();
 
 export default () => (
   <div className={styles.footer}>
-    &copy; 2000 - {year} Dan Makovec
+    &copy; 2000 - {year} Daniel Makovec
   </div>
 )
