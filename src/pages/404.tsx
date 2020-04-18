@@ -5,7 +5,7 @@ import Helmet from 'react-helmet'
 import Layout from '../components/layout'
 
 
-class NotFound extends React.Component {
+class NotFound extends React.Component<PageProps> {
     render() {
         const siteTitle = get(this.props, 'data.site.siteMetadata.title')
 
