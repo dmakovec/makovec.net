@@ -1,0 +1,88 @@
+==================================================================
+https://keybase.io/dmakovec
+--------------------------------------------------------------------
+
+I hereby claim:
+
+  * I am an admin of https://dan.makovec.net
+  * I am dmakovec (https://keybase.io/dmakovec) on keybase.
+  * I have a public key with fingerprint 27D7 8FCF F678 0C10 5FB8  F602 3FC1 F532 3884 D50D
+
+To do so, I am signing this object:
+
+{
+  "body": {
+    "key": {
+      "eldest_kid": "01205ca414eb3e076e9cbced797a6e5bd7f412552b3cf8c520dd6c0679ed440c0a0d0a",
+      "fingerprint": "27d78fcff6780c105fb8f6023fc1f5323884d50d",
+      "host": "keybase.io",
+      "key_id": "3fc1f5323884d50d",
+      "kid": "010100df9150088f67da17ae497ed21de962b38a8c50792bfeb3c84b6269f2a4822c0a",
+      "uid": "ea84641c8415284a7ba0562439055d19",
+      "username": "dmakovec"
+    },
+    "merkle_root": {
+      "ctime": 1587191198,
+      "hash_meta": "71d8bfa46f05ab2293e33269f7cbde947233ab9dd886294e6ea84fdd7d907bbc",
+      "seqno": 15965337
+    },
+    "revoke": {
+      "sig_ids": [
+        "df6692e4fd61673635e9c3f6f08267b68dbc1fbf563ef6b2089da90595b111d40f"
+      ]
+    },
+    "service": {
+      "hostname": "dan.makovec.net",
+      "protocol": "https:"
+    },
+    "type": "web_service_binding",
+    "version": 1
+  },
+  "ctime": 1587191216,
+  "expire_in": 157680000,
+  "prev": "dc29c2302f29b70f3e7ff62b7fb944b4f6e93e0a3a93c0bc3c646ae4c5de55d5",
+  "seqno": 24,
+  "tag": "signature"
+}
+
+which yields the signature:
+
+-----BEGIN PGP MESSAGE-----
+Version: Keybase OpenPGP v2.1.13
+Comment: https://keybase.io/crypto
+
+yMQGAnicbZNrbBRVFMfbIkXa1JKUhwakzTRGqW29c2fmzkyjUF4Vm2oghGJZ2OXe
+uXe2Q7s7291heTZ8wEqJBEVeBQNVCaEYxKJQQaKxtdgXFhVIWzEtUiyFFqI8DApS
+7zQQY+LMh8nM/M85v/M/5zYmjYhJiJ1Wfwdqb5xPim1rWL08xrt7T+0agdh0lZCz
+Rihhww9WSlnE8ZVYVMgRgAiBYmBZlBmRGFAR0w1iMKrqKkZMIVQ1ZREqCiSSYWqG
+AgGlyABI1RmVZWAADCjAQqZgWkE/C4fCVtDhaaFKVc00TBOpGjBEoJhEMxGAkmmI
+piJBSdNkqgDKA4vtiBvB4QiOsGzL5t/4i28Y73/0j7j5DaipiwoAGs+tUiyqmMm6
+yigUKdMRR9YwRwaqDonJ2zM0mSCIdBNiWYPQGOZePpyOYU1GssgVogI1GasEAwVB
+WdKBolBRd4URFg7iAONqGsAldpQZQnmmEGDhklLmC9u245prOJYrERVNFXVR1DXe
+II4U+wLMwTxSFalGTCwjEyiYQKhLTJJcJNUgnFlWoSRholOqaQjqMkMumEmpSnWg
+EmJwjggrC9puBR0pkqRyhDCL2iXMrR6x/Ny3iJDjEaiJkA4ZD0YiUiUkKXyykskL
+axCpBGmUcGuJqSCJmYhAoOkU8251hYiiSGVgCkvK3WrhqGUMJ3cH9cgAHMx+6EF2
+kDmcKhS2HduwS/nPYscJRXJcb5xVIVe9ghHfwzw+YgUp3xQeEWXhiGUHeSdc+V/b
+oIgyBbYyZIWZz3IVioo0wC+3Dou6AAbUDSgBaEKdqMCUmMp3DRLVJLosE9nke8zX
+GUtYlwxADMlAMuLbYSiU8YEq//oIZc6J/TwnNy+IneVhJpQ31C9+LCY2ISZ+ZJx7
+hGISRo95dLDa1yUP0cH2m3GJf+fMzL8A0mZdK/fUtK/XTx77OD09ZemUlks3yxKL
+9h3pCO0/0eDNfbxxc1fP0Y2/v+obuJqo+GtYU2fh/Kvnb90IpC4a1zKYWrNEu9t+
+7dTF9dc7shI+2H6obsRJ74/rbsQnV9CDQyWbTua3sNy+vvo7ldN2vFx3ecv+s7H2
+04kbr9Vu7PbeKO1xAmszr6af+TPvvX1p8++Ke5f5y5t77z/ITetfMUPPO7d9TuuY
+tFsZMxfkl31eKI8amFY1tznrypGjbVnRlHves9+aS/pzuuwTF+f91t64ekJK3P30
+OeG3O9Krvxxa6bBQZ3fi92Vplb0/F7U+cWxect1LRb9oDT8twy+coXpvx8XkikUP
+BkZ3v52x16r7ZFNT0e7J2UnPNU7dcO707a1LD3Vl9B7v++FA9ftTdi0+/vVfyV9d
+iru3JZSUWgi21e0a1dw+/c1Ts1qqUq7kvvPRqIKmX4e2ZlUGLhfPuP/shwev19h7
+8j5LTPc81T+4dHHtzut9WUErf0fn65MSb809PV063XnX+0pzLPZEq2eNJ1smHDhc
+saFqb0V9z2y7N1uZHd82/ubzT6K1zYUVn1YtG/mu44+9vfmP6qyMnoKqplrvVE/r
+CGthRoKneOfhNucZ/9iCt5xvCma81h0/cWDBQN53g+P2TT4/8ot7qa0VC3fenjhY
+mdo1OoKOnfPERca29l9YOGnbi/8AonUNBg==
+=xu0P
+-----END PGP MESSAGE-----
+
+And finally, I am proving ownership of this host by posting or
+appending to this document.
+
+View my publicly-auditable identity here: https://keybase.io/dmakovec
+
+==================================================================
