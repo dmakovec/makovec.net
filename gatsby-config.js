@@ -19,6 +19,7 @@ if (!spaceId || !accessToken) {
 module.exports = {
   siteMetadata: {
     title: "Dan Makovec",
+    siteUrl: "https://dan.makovec.net",
   },
   pathPrefix: '/',
   plugins: [
