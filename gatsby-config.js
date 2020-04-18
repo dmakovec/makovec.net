@@ -25,9 +25,29 @@ module.exports = {
     'gatsby-transformer-remark',
     'gatsby-transformer-sharp',
     'gatsby-plugin-arengu-forms',
+    {
+      resolve: `gatsby-plugin-manifest`,
+      options: {
+        name: `Dan Makovec's Site`,
+        short_name: `Dan M`,
+        start_url: `/`,
+        background_color: `#ffffff`,
+        theme_color: `#ffffff`,
+        display: `standalone`,
+      },
+    },
+    {
+      resolve: `gatsby-plugin-nprogress`,
+      options: {
+        color: `blue`,
+      },
+    },
+    'gatsby-plugin-offline',
     'gatsby-plugin-react-helmet',
+    'gatsby-plugin-robots-txt',
     'gatsby-plugin-sass',
     'gatsby-plugin-sharp',
+    'gatsby-plugin-sitemap',
     'gatsby-plugin-typescript',
     {
       resolve: 'gatsby-source-contentful',
