@@ -4,12 +4,14 @@ import Helmet from 'react-helmet'
 import get from 'lodash/get'
 import Img from 'gatsby-image'
 import Layout from '../components/layout'
+import { Link } from 'gatsby'
 
 import heroStyles from '../components/hero.module.scss'
+import tagStyles from '../components/tags.module.scss'
 
 class BlogPostTemplate extends React.Component<PageProps> {
   render() {
-    const post = get(this.props, 'data.contentfulBlogPost')
+    const post = get(this.props, 'data.post')
 
     return (
       <Layout location={this.props.location}>
@@ -35,7 +37,7 @@ class BlogPostTemplate extends React.Component<PageProps> {
             >
               {post.publishDate}
             </p>
-            <div style={{fontStyle: "italic"}}
+            <div style={{ fontStyle: "italic" }}
               dangerouslySetInnerHTML={{
                 __html: post.description.childMarkdownRemark.html,
               }}
@@ -45,6 +47,14 @@ class BlogPostTemplate extends React.Component<PageProps> {
                 __html: post.body.childMarkdownRemark.html,
               }}
             />
+            <hr/>
+            {post.tags &&
+              post.tags.map((tag: string) => (
+                <p className={tagStyles.tag} key={tag}>
+                  <Link to={`/tag/${_.kebabCase(tag)}`}>{tag}</Link>
+                </p>
+              ))}
+
           </div>
         </div>
       </Layout>
@@ -61,7 +71,8 @@ export const pageQuery = graphql`
         title
       }
     }
-    contentfulBlogPost(slug: { eq: $slug }) {
+    post: contentfulBlogPost(slug: { eq: $slug }) {
+      tags
       title
       description {
         childMarkdownRemark {

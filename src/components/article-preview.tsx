@@ -4,6 +4,7 @@ import Img from 'gatsby-image'
 const _ = require("lodash")
 
 import styles from './article-preview.module.scss'
+import tagStyles from './tags.module.scss'
 
 export default function ({ article }: {article: any}) {
   return (
@@ -22,7 +23,7 @@ export default function ({ article }: {article: any}) {
       />
       {article.tags &&
         article.tags.map((tag: string) => (
-          <p className={styles.tag} key={tag}>
+          <p className={tagStyles.tag} key={tag}>
             <Link to={`/tag/${_.kebabCase(tag)}`}>{tag}</Link>
           </p>
         ))}
