@@ -14,7 +14,7 @@ class RootIndex extends React.Component<PageProps> {
       <Layout location={this.props.location}>
         <div className="content">
           <Helmet>
-            <title>Home</title>
+            <title>Open Source Developer</title>
           </Helmet>
           <Hero data={author.node} />
           <div className="wrapper">
