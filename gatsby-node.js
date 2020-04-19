@@ -46,6 +46,9 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
         slug: post.node.slug
       },
     })
+
+    createRedirect({ fromPath: post.node.slug, toPath: `/useful-stuff/${post.node.slug}`, isPermanent: true })
+
   })
 
   // Tags
