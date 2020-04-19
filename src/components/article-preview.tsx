@@ -23,7 +23,7 @@ export default function ({ article }: {article: any}) {
       {article.tags &&
         article.tags.map((tag: string) => (
           <p className={styles.tag} key={tag}>
-            <Link to={`/useful-stuff/tag/${_.kebabCase(tag)}`}>{tag}</Link>
+            <Link to={`/tag/${_.kebabCase(tag)}`}>{tag}</Link>
           </p>
         ))}
     </div>

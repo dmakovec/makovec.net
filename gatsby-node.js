@@ -3,10 +3,14 @@ const path = require('path')
 const _ = require("lodash")
 
 exports.createPages = async ({ graphql, actions, reporter }) => {
-  const { createPage } = actions
+  const { createPage, createRedirect } = actions
 
   const blogPostTemplate = path.resolve('./src/templates/blog-post.tsx')
   const tagTemplate = path.resolve('./src/templates/tag.tsx')
+
+  // Legacy page redirects
+  createRedirect({ fromPath: '/category/useful-stuff', toPath: '/useful-stuff', isPermanent: true });
+
 
   const result = await graphql(`
         {
@@ -48,7 +52,7 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
   const tags = result.data.tags.group
   tags.forEach((tag) => {
     createPage({
-      path: `/useful-stuff/tag/${_.kebabCase(tag.fieldValue)}/`,
+      path: `/tag/${_.kebabCase(tag.fieldValue)}/`,
       component: tagTemplate,
       context: {
         tag: tag.fieldValue
