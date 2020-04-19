@@ -5,6 +5,7 @@ import get from 'lodash/get'
 import Img from 'gatsby-image'
 import Layout from '../components/layout'
 import { Link } from 'gatsby'
+import _ from "lodash"
 
 import heroStyles from '../components/hero.module.scss'
 import tagStyles from '../components/tags.module.scss'
