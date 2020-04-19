@@ -1,7 +1,7 @@
 import React from 'react'
 import { Link } from 'gatsby'
 import Img from 'gatsby-image'
-const _ = require("lodash")
+import _ from "lodash"
 
 import styles from './article-preview.module.scss'
 import tagStyles from './tags.module.scss'
