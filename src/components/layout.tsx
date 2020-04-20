@@ -20,6 +20,7 @@ class Layout extends React.Component<PageProps> {
       <Container>
         <Helmet titleTemplate="%s | Dan Makovec">
           <meta name="author" content="Dan Makovec" />
+          <meta name="viewport" content="width=device-width, initial-scale=1.0">
         </Helmet>
         <Navigation location={location} />
         {children}
