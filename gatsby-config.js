@@ -20,12 +20,74 @@ module.exports = {
   siteMetadata: {
     title: "Dan Makovec",
     siteUrl: "https://dan.makovec.net",
+    description: "Musings of a geek",
   },
   pathPrefix: '/',
   plugins: [
-    'gatsby-transformer-remark',
-    'gatsby-transformer-sharp',
     'gatsby-plugin-arengu-forms',
+    'gatsby-plugin-client-side-redirect',
+    {
+      resolve: 'gatsby-plugin-feed',
+      options: {
+        query: `
+          {
+            site {
+              siteMetadata {
+                title
+                description
+                siteUrl
+                site_url: siteUrl
+              }
+            }
+          }
+        `,
+        feeds:
+          [
+            {
+              serialize: ({ query: { site, allContentfulBlogPost } }) => {
+                return allContentfulBlogPost.edges.map(edge => {
+                  return Object.assign({}, {
+                    description: edge.node.description.childMarkdownRemark.html,
+                    date: edge.node.publishDate,
+                    url: site.siteMetadata.siteUrl + edge.node.slug,
+                    guid: site.siteMetadata.siteUrl + edge.node.slug,
+                    custom_elements: [
+                      {
+                        "content:encoded": edge.node.body.childMarkdownRemark.html
+                      }
+                    ]
+
+                  })
+                })
+              },
+              query: `
+              {
+                allContentfulBlogPost(sort: { fields: [publishDate], order: DESC }) {
+                  edges {
+                    node {
+                      title
+                      slug
+                      publishDate
+                      description {
+                        childMarkdownRemark {
+                          html
+                        }
+                      }
+                      body {
+                        childMarkdownRemark {
+                          html
+                        }
+                      }
+                    }
+                  }
+                }
+              }`,
+              output: "/feed",
+              title: "Dan Makovec's site",
+            }
+          ],
+      }
+    },
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
@@ -56,6 +118,7 @@ module.exports = {
       resolve: 'gatsby-source-contentful',
       options: contentfulConfig,
     },
-    'gatsby-plugin-client-side-redirect',
+    'gatsby-transformer-remark',
+    'gatsby-transformer-sharp',
   ],
 }
