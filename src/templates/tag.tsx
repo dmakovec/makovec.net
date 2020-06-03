@@ -33,6 +33,12 @@ class Tag extends React.Component<Props> {
 
         return (
             <Layout location={this.props.location}>
+                <Helmet>
+                    <title>{tagHeader}</title>
+                    <meta name="title" content={tagHeader} />
+                    <meta name="description" content={`Pages on this site tagged with ${tag}`} />
+                </Helmet>
+
                 <Helmet title={tagHeader} />
                 <div className="content">
 
