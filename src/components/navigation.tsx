@@ -58,7 +58,7 @@ export default class Navigation extends React.Component<PageProps> {
       } else {
         links.push(
           (<li className={className} key={index}>
-            <Link to={item.url}>{item.title}</Link>
+            <Link to={item.url} title={item.title}>{item.title}</Link>
           </li>)
         )
 
