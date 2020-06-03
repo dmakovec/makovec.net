@@ -15,6 +15,8 @@ class RootIndex extends React.Component<PageProps> {
         <div className="content">
           <Helmet>
             <title>Open Source Developer</title>
+            <meta name="title" content="Dan Makovec - Open Source Developer" />
+            <meta name="description" content="The home page of Dan makovec, open source developer in Melbourne, Australia" />
           </Helmet>
           <Hero data={author.node} />
           <div className="wrapper">

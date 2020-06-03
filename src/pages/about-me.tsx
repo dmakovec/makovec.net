@@ -10,8 +10,12 @@ class AboutIndex extends React.Component<PageProps> {
 
     return (
       <Layout location={this.props.location}>
+        <Helmet title={page.title}>
+          <meta name="title" content={page.title} />
+          <meta name="description" content={page.description} />
+        </Helmet>
+
         <div className="content">
-          <Helmet title={page.title} />
           <div className="wrapper">
             <h1 className="section-headline">{page.title}</h1>
 
@@ -32,18 +36,14 @@ export default AboutIndex
 
 export const pageQuery = graphql`
   {
-    site {
-        siteMetadata {
-          title
+    contentfulPage(slug: {eq: "about-me"}) {
+      title
+      description
+      body {
+        childMarkdownRemark {
+          html
         }
       }
-      contentfulPage(slug: {eq: "about-me"}) {
-        title
-        body {
-          childMarkdownRemark {
-            html
-          }
-        }
-      }
+    }
   }
 `

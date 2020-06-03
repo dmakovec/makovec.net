@@ -18,7 +18,7 @@ class Layout extends React.Component<PageProps> {
 
     return (
       <Container>
-        <Helmet titleTemplate="%s | Dan Makovec">
+        <Helmet defaultTitle="Dan Makovec - Open Source Developer" titleTemplate="%s | Dan Makovec">
           <meta name="author" content="Dan Makovec" />
           <meta name="viewport" content="width=device-width, initial-scale=1.0" />
           <link rel="alternate" type="application/rss+xml"

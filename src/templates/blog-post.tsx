@@ -18,6 +18,7 @@ class BlogPostTemplate extends React.Component<PageProps> {
       <Layout location={this.props.location}>
         <Helmet>
           <title>{post.title}</title>
+          <meta name="title" content={post.title} />
           <meta name="description" content={post.description.childMarkdownRemark.excerpt} />
           <meta name="keywords" content={post.tags.join()} />
 

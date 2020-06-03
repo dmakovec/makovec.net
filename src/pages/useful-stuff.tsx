@@ -13,6 +13,7 @@ interface Post {
 }
 
 const TITLE = "Useful Stuff";
+const DESCRIPTION = "Tidbits of info on various tech things";
 
 class BlogIndex extends React.Component<PageProps> {
   render() {
@@ -23,8 +24,8 @@ class BlogIndex extends React.Component<PageProps> {
       <Layout location={this.props.location}>
         <div className="content">
           <Helmet title={TITLE}>
-            <meta name="description" content="Tidbits of info on various tech things" />
-
+            <meta name="title" content={TITLE} />
+            <meta name="description" content={DESCRIPTION} />
           </Helmet>
           <div className="wrapper">
             <h1 className="section-headline">{TITLE}</h1>
