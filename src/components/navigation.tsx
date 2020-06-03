@@ -51,7 +51,7 @@ export default class Navigation extends React.Component<PageProps> {
       if (item.url.substring(0, 4) === 'http') {
         links.push(
           (<li className={className} key={index}>
-            <a href={item.url}>{item.title}</a>
+            <a href={item.url} title={item.title}>{item.title}</a>
           </li>)
         )
 
