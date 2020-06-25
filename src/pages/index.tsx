@@ -13,8 +13,8 @@ class RootIndex extends React.Component<PageProps> {
     return (
       <Layout location={this.props.location}>
         <div className="content">
-          <Helmet>
-            <title>Open Source Developer</title>
+          <Helmet titleTemplate="%s">
+            <title>Dan Makovec - Open Source Developer in Melbourne, Australia</title>
             <meta name="title" content="Dan Makovec - Open Source Developer" />
             <meta name="description" content="The home page of Dan Makovec, open source developer in Melbourne, Australia" />
           </Helmet>
