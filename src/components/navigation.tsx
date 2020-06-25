@@ -68,7 +68,7 @@ export default class Navigation extends React.Component<PageProps> {
 
     return (
       <nav role="navigation" className={this.state.toggle ? styles.activeNav : ""}>
-        <button className={navButtonStyle} onClick={this.Toggle}>
+        <button aria-label="Navigation" className={navButtonStyle} onClick={this.Toggle}>
           <FaAlignRight />
         </button>
         <ul className={this.state.toggle ? `${styles.navLinks} ${styles.showNav}` : styles.navLinks}>
