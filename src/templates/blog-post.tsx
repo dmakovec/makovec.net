@@ -22,6 +22,21 @@ class BlogPostTemplate extends React.Component<PageProps> {
           <meta name="description" content={post.description.childMarkdownRemark.excerpt} />
           <meta name="keywords" content={post.tags.join()} />
 
+          <meta property="og:title" content={post.title} />
+          <meta property="og:url" content={`https://dan.makovec.net/useful-stuff/${post.slug}`}/>
+          <meta property="og:description" content={post.description.childMarkdownRemark.excerpt} />
+          <meta property="og:image" content={post.heroImage.file.url}/>
+          <meta property="og:type" content="article" />
+
+          <meta name="twitter:card" content="summary_large_image" />
+          <meta name="twitter:creator" content="@dmakovec" />
+          <meta name="twitter:site" content="@dmakovec" />
+          <meta name="twitter:title" content={post.title} />
+          <meta name="twitter:description" content={post.description.childMarkdownRemark.excerpt} />
+          <meta name="twitter:image:src" content={post.heroImage.file.url} />
+          <meta name="twitter:image:width" content="280" />
+          <meta name="twitter:image:height" content="150" />
+
         </Helmet>
         <div className="content">
           <div style={{ height: "200px", margin: "0 auto", overflow: "hidden", width: "200px" }} className={heroStyles.hero}>
@@ -75,6 +90,7 @@ export const pageQuery = graphql`
     }
     post: contentfulBlogPost(slug: { eq: $slug }) {
       tags
+      slug
       title
       description {
         childMarkdownRemark {
@@ -82,11 +98,13 @@ export const pageQuery = graphql`
           excerpt(format: PLAIN)
         }
       }
-      tags
       publishDate(formatString: "MMMM Do, YYYY")
       heroImage {
         fluid(maxHeight: 200, background: "rgb:ffffff") {
           ...GatsbyContentfulFluid
+        }
+        file {
+          url
         }
       }
       body {
