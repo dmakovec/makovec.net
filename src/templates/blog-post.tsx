@@ -28,14 +28,12 @@ class BlogPostTemplate extends React.Component<PageProps> {
           <meta property="og:image" content={post.heroImage.file.url}/>
           <meta property="og:type" content="article" />
 
-          <meta name="twitter:card" content="summary_large_image" />
+          <meta name="twitter:card" content="summary" />
           <meta name="twitter:creator" content="@dmakovec" />
           <meta name="twitter:site" content="@dmakovec" />
           <meta name="twitter:title" content={post.title} />
           <meta name="twitter:description" content={post.description.childMarkdownRemark.excerpt} />
-          <meta name="twitter:image:src" content={post.heroImage.file.url} />
-          <meta name="twitter:image:width" content="280" />
-          <meta name="twitter:image:height" content="150" />
+          <meta name="twitter:image" content={post.heroImage.file.url} />
 
         </Helmet>
         <div className="content">
