@@ -47,7 +47,7 @@ module.exports = {
               serialize: ({ query: { site, allContentfulBlogPost } }) => {
                 return allContentfulBlogPost.edges.map(edge => {
                   return Object.assign({}, {
-                    title: site.siteMetadata.title,
+                    title: edge.node.title,
                     description: edge.node.description.childMarkdownRemark.html,
                     date: edge.node.publishDate,
                     url: site.siteMetadata.siteUrl + edge.node.slug,
